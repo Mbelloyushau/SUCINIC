@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors Of S.U</title>
+    <link rel="stylesheet" href="index2.css">
+    <style>
+        .menu-toggle{
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 30px;
+            margin-right: 10px;
+        }
+        @media (max-width:728px) {
+            .menu-toggle{
+                display: block;
+            }
+            nav ul{
+                display: block;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+            }
+            nav ul.appear{
+                max-height: 400px;
+                opacity: 1;
+            }
+            nav ul li{
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+           <img src="IMAGE/s.u_clinic_logo-removebg-preview.png" alt="my logo" width="7%">
+           <div class="menu-toggle">☰</div>
+
+            <ul> 
+                <li><a href="index2.html">HOME</a></li>
+                <li><a href="about2.html">ABOUT</a></li>
+                <li><a href="services2.html">SERVICES</a></li>
+                <li><a href="doctors2.html">DOCTORS</a></li>
+                <li><a href="appointment2.html">APPOINTEMENT</a></li>
+                <li><a href="contact2.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    <section class="doctor">
+            <h2>Meet Our Doctors</h2>
+            <div class="grid">
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Dr. Abdullahi</h3><p>Consultant</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Alh. Yusha'u</h3><p>Director</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Nr. Abubakar</h3><p>Nurse</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Dr. Adam</h3><p>Incharge</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Rm. Fiddausi</h3><p>Maternity IC</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>MLT. Abdullahi</h3><p>Lab</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Nr. Maryam</h3><p>Pharmacy</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Haj. Batula</h3><p>Pharmacy</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Nr. Zaihanatu</h3><p>Nurse</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Chief Auwal</h3><p>Desk Officer</p></div>
+        </div>
+    </section>
+    <footer>
+        <p>2025 All right reserved.</p>
+        <div class="social">
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">github</a>
+        </div>
+    </footer>
+
+    <script>
+
+        const toggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('nav ul');
+        const links = document.querySelectorAll('nav ul li a')
+
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('appear');
+            toggle.textContent = navLinks.classList.contains('appear') ? '✖' : '☰';
+        });
+
+        links.forEach(Link => {
+            Link.addEventListener('click', () =>{
+                navLinks.classList.remove('appear');
+                toggle.textContent ='☰'
+            });
+        });
+    </script>
+</body>
+</html>

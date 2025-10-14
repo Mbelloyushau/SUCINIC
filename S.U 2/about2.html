@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About S.U</title>
+    <link rel="stylesheet" href="index2.css">
+    <style>
+        .abt{
+    background-image: url(s.u\ background2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    height: 100vh;
+    margin-top: 0;
+    }
+    footer{
+        margin-top: 0px;
+    }
+    .menu-toggle{
+        display: none;
+        cursor: pointer;
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    @media (max-width:728px) {
+        .menu-toggle{
+            display: block;
+        }
+        nav ul.appear{
+            opacity: 1;
+            max-height: 400px;
+            margin-top: -15px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <nav>
+            <img src="IMAGE/s.u_clinic_logo-removebg-preview.png" alt="my logo" width="7%">
+            <div class="menu-toggle">☰</div>
+            <ul>
+                <li><a href="index2.html">HOME</a></li>
+                <li><a href="about2.html">ABOUT</a></li>
+                <li><a href="services2.html">SERVICES</a></li>
+                <li><a href="doctors2.html">DOCTORS</a></li>
+                <li><a href="appointment2.html">APPOINTEMENT</a></li>
+                <li><a href="contact2.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <section class="abt">
+        <h2 >ABOUT US</h2>
+        <pre class="about-paragraph">We are S.U Clinic And Maternity we provide</pre>
+        <pre class="about-paragraph">top-notch healthcare with modern facilities</pre>
+        <pre class="about-paragraph">and experienced doctors who care for your well-being.</pre>
+    </section>
+<footer>
+        <p>2025 All right reserved.</p>
+        <div class="social">
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">github</a>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('nav ul');
+        const links = document.querySelectorAll('nav ul li a');
+
+        toggle.addEventListener('click', () =>{
+            navLinks.classList.toggle('appear');
+            toggle.textContent = navLinks.classList.contains('appear') ? '✖':'☰';
+        });
+
+        links.forEach(link =>{
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('appear');
+                toggle.textContent = '☰'
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index2.css">
+    <link rel="stylesheet" href="form2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <title>Home</title>
+</head>
+<body>
+     <nav>
+            <img src="IMAGE/s.u_clinic_logo-removebg-preview.png" alt="my logo" width="7%">
+            <div class="menu-toggle">☰</div>
+            <ul>
+                <li><a href="index2.html">HOME</a></li>
+                <li><a href="about2.html">ABOUT</a></li>
+                <li><a href="services2.html">SERVICES</a></li>
+                <li><a href="doctors2.html">DOCTORS</a></li>
+                <li><a href="form2.html">APPOINTEMENT</a></li>
+                <li><a href="contact2.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    
+    <section class="main">
+        <div class="hero">
+            <h1>Your Health, <br>Our Priority</h1>
+            <pre class="hero-paragraph">We provide top-notch healthcare with</pre>
+            <pre class="hero-paragraph">modern facilities and experienced doctors</pre>
+            <pre class="hero-paragraph">who care for your well-being.</pre>
+            <button class="btn"><a href="appointment2.html">Book Apointment</a></button>
+        </div>
+        <!-- <div class="pic">
+            <img src="IMAGE/s.u_doctor-removebg-preview.png" alt="My doctor" class="mypic">
+        </div> -->
+    </section> 
+
+    <section class="abt">
+        <h2 >ABOUT US</h2>
+        <pre class="about-paragraph">We are S.U Clinic And Maternity we provide</pre>
+        <pre class="about-paragraph">top-notch healthcare with modern facilities</pre>
+        <pre class="about-paragraph">and experienced doctors who care for your well-being.</pre>
+    </section>
+
+    <section class="sev">
+        <h2>Our Services</h2>
+        <div class="grid">
+         <div class="sevcard" ><i class="fa-solid fa-stethoscope"></i> General Check up</div>
+         <div class="sevcard"><i class="fa-solid fa-bone"></i> Pediatric</div>
+         <div class="sevcard"><i class="fa-solid fa-person-breastfeeding"></i> Antenatal care</div>
+         <div class="sevcard"><i class="fa-solid fa-truck-medical"></i> Emergency</div>
+         </div>
+    </section>
+
+    <section class="doctor">
+            <h2>Meet Our Doctors</h2>
+            <div class="grid">
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Dr. Abdullahi</h3><p>Consultant</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Alh. Yusha'u</h3><p>Director</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Nr. Abubakar</h3><p>Nurse</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Dr. Adam</h3><p>Incharge</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Rm. Fiddausi</h3><p>Maternity IC</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>MLT. Abdullahi</h3><p>Lab</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Nr. Maryam</h3><p>Pharmacy</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Haj. Batula</h3><p>Pharmacy</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Nr. Zaihanatu</h3><p>Nurse</p></div>
+        <div class="doct"><img src="IMAGE/alhaji-bello.jpg" alt="" ><h3>Chief Auwal</h3><p>Desk Officer</p></div>
+        </div>
+    </section>
+
+    <section class="app">
+         <h1 class="header">Book an Appointment</h1>
+        <form  id="form">
+            <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="First Name" required>
+
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" placeholder="Surname" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="service">Service:</label>
+      <select id="service" required>
+        <option value="">Select Service</option>
+        <option >Consultation</option>
+        <option >Emergency</option>
+        <option >Check-up</option>
+         <option>Antenatal Care</option>
+        <option>General Checkup</option>
+        <option>Pediatric</option>
+        <option>Insurance</option>
+      </select>
+
+      <label for="message">Message (optional):</label>
+      <textarea id="message" placeholder="Additional information..."></textarea>
+
+      <button type="submit" id="submit">Submit Appointment</button>
+        </form>
+        <div id="display"></div>
+        </section>
+
+    <section class="con">
+              <h2>Contact Us</h2>
+        <div class="contact">
+            <address>Beside old post office,</address>
+            <address>Kofar Gabas, Zakirai</address>
+            <address>Gabasawa Local Government</address>
+            <address>Kano State</address>
+            <p>Phone Number: 08038957344,08164160710</p>
+            <p>Working Hours: Monday-Saturday 247</p>
+        </div>
+    </section>
+    <footer>
+        <p>2025 All right reserved.</p>
+        <div class="social">
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">github</a>
+        </div>
+    </footer>
+    <script>
+            const toggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('nav ul');
+            const links = document.querySelectorAll('nav ul li a');
+
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            toggle.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
+        });                                         
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            toggle.textContent = '☰';
+        });
+        });
+  
+    </script>
+    <script src="form.js"></script>
+
+</body>
+</html>
