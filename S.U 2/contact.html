@@ -3,60 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Of S.U</title>
+    <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .menu-toggle{
-            display: none;
-            cursor: pointer;
-            font-size: 30px;
-            color: white;
-            margin-right: 10px;
-        }
-        @media (max-width:728px) {
-            .menu-toggle{
-                display: block;
-            }
-            nav ul{
-                display: block;
-                position: absolute;
-                
-
-            }
-            nav ul.appear{
-                max-height: 400px;
-                opacity: 1;
-                margin-top: -13px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>contact</title>
 </head>
 <body>
-   <nav>
+     <nav>
             <img src="IMAGE/s.u_clinic_logo-removebg-preview.png" alt="my logo" width="7%">
-             <div class="menu-toggle">☰</div>
-
+            <div class="menu-toggle">☰</div>
             <ul>
-                <li><a href="index2.html">HOME</a></li>
-                <li><a href="about2.html">ABOUT</a></li>
-                <li><a href="services2.html">SERVICES</a></li>
-                <li><a href="doctors2.html">DOCTORS</a></li>
-                <li><a href="appointment2.html">APPOINTEMENT</a></li>
-                <li><a href="contact2.html">CONTACT</a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="doctors.html">DOCTORS</a></li>
+                <li><a href="form.html">APPOINTEMENT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </nav>
-     <section class="con">
-              <h2>Contact Us</h2>
-        <div class="contact">
-            <address>Beside old post office,</address>
-            <address>Kofar Gabas, Zakirai</address>
-            <address>Gabasawa Local Government</address>
-            <address>Kano State</address>
-            <p>Phone Number: 08038957344,08164160710</p>
-            <p>Working Hours: Monday-Saturday 247</p>
+    
+    <section class="contact-section">
+        <h1 class="con-header">Contact Us</h1>
+        <p class="con-para">Any questions or remars? Just write us a message</p>
+          <form class="contact-form">
+            <div class="input-group">      
+                
+                <input class="con-input" type="email" placeholder="Enter a valid email address" required>
+                
+                <input class="con-input" type="text" placeholder="Enter your name" required>
+            </div>
+                <button class="con-btn" type="submit">Submit</button>
+            </form>
+            <div class="see"></div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-box">
+            <div class="icon">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+            <h3>PHONE</h3>
+            <p>08038957344</p>
+            <p>08164160710</p>
+        </div>
+
+        <div class="info-box">
+            <div class="icon">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            <h3>OUR LOCATION</h3>
+            <p>Beside old post office,</p>
+            <p>Kofar Gabas, Zakirai</p>
+            <p>Gabasawa Local Government</p>
+            <p>Kano State</p>
+           
         </div>
     </section>
-    <footer>
+
+     <footer>
         <p>2025 All right reserved.</p>
         <div class="social">
             <a href="#">facebook</a>
@@ -65,25 +69,11 @@
             <a href="#">github</a>
         </div>
     </footer>
-
+   
+    <script src="toggle.js"></script>
+    <script src="contact.css"></script>
     <script>
-        const toggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('nav ul');
-        const links = document.querySelectorAll('nav ul li a');
-
-        toggle.addEventListener('click' ,() =>{
-            navLinks.classList.toggle('appear');
-            toggle.textContent = navLinks.classList.contains('appear') ? '✖' : '☰';
-        });
-
-        links.forEach(link =>{
-        link.addEventListener('click', () =>{
-            navLinks.classList.remove('appear');
-            toggle.textContent ='☰'
-        });
-    });
+        
     </script>
 </body>
-
 </html>
-
