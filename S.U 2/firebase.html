@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Document</title>
+</head>
+<body>
+   
+ <section>
+        <h1 class="header">Book an Appointment</h1>
+        <form  id="form">
+            <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="First Name" required>
+
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" placeholder="Surname" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="service">Service:</label>
+      <select id="service" required>
+        <option value="">Select Service</option>
+        <option >Consultation</option>
+        <option >Emergency</option>
+        <option >Check-up</option>
+         <option>Antenatal Care</option>
+        <option>General Checkup</option>
+        <option>Pediatric</option>
+        <option>Insurance</option>
+      </select>
+
+      <label for="message">Message (optional):</label>
+      <textarea id="message" placeholder="Additional information..."></textarea>
+
+      <button type="submit" id="submit">Submit Appointment</button>
+        </form>
+        <div id="display"></div>
+    </section>
+
+    
+
+
+<!-- Firebase SDK -->
+<script type="module">
+  // Import Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+  
+const firebaseConfig = {
+  apiKey: "AIzaSyBfjYfLJmWaUgPJCoZAlkLU5wZyoylAxtk",
+  authDomain: "su-clinic.firebaseapp.com",
+  databaseURL: "https://su-clinic-default-rtdb.firebaseio.com",
+  projectId: "su-clinic",
+  storageBucket: "su-clinic.appspot.com",
+  messagingSenderId: "263640396363",
+  appId: "1:263640396363:web:a0ed52f6cdf395159693ce"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // Handle Form Submission
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#form");
+    const display = document.querySelector("#display");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const appointment = {
+        name: document.querySelector("#name").value.trim(),
+        surname: document.querySelector("#surname").value.trim(),
+        email: document.querySelector("#email").value.trim(),
+        phone: document.querySelector("#phone").value.trim(),
+        date: document.querySelector("#date").value,
+        service: document.querySelector("#service").value,
+        message: document.querySelector("#message").value.trim(),
+        timestamp: new Date().toLocaleString()
+      };
+
+      // Save to Firebase
+      const appointmentsRef = ref(db, "appointments");
+      const newAppointment = push(appointmentsRef);
+
+      set(newAppointment, appointment)
+        .then(() => {
+          display.innerHTML = `
+            <h3>✅ Appointment Submitted!</h3>
+            <p><strong>Name:</strong> ${appointment.name}</p>
+            <p><strong>Surname:</strong> ${appointment.surname}</p>
+            <p><strong>Email:</strong> ${appointment.email}</p>
+            <p><strong>Phone:</strong> ${appointment.phone}</p>
+            <p><strong>Date:</strong> ${appointment.date}</p>
+            <p><strong>Service:</strong> ${appointment.service}</p>
+            <p><strong>Message:</strong> ${appointment.message || "No message provided"}</p>
+          `;
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("Error saving data:", error);
+          display.innerHTML = `<p>❌ Failed to submit appointment. Try again.</p>`;
+        });
+    });
+  });
+</script>
+<script src="form.js"></script>
+</body>
+</html>
